@@ -44,7 +44,7 @@ public class Player : BaseEntity
             case Armor armor:
                 Armor = armor;
                 break;
-            case Weapon weapon:
+            case IWeapon weapon:
                 Weapon = weapon;
                 break;
             case HealingPotion healingPotion:
