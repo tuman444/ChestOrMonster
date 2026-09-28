@@ -43,8 +43,15 @@ public static class ItemFactory
         };
     }
 
-    private static Weapon CreateRandomWeapon()
+    private static IWeapon CreateRandomWeapon()
     {
+        bool isCrossbow = _random.Next(0, 2) == 0;
+        if (isCrossbow)
+        {
+            var crossbowTemplate = Crossbows[_random.Next(0, Crossbows.Length)];
+            return new Crossbow(crossbowTemplate.Name, crossbowTemplate.Damage, crossbowTemplate.Accuracy);
+        }
+
         var template = Weapons[_random.Next(0, Weapons.Length)];
         return new Weapon(template.Name, template.Damage);
     }
