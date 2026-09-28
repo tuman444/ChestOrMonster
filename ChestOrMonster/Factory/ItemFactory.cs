@@ -1,5 +1,6 @@
 ﻿using ChestOrMonster.Interface;
 using ChestOrMonster.Model.Item;
+using System.Globalization;
 
 namespace ChestOrMonster.Factory;
 
@@ -22,6 +23,13 @@ public static class ItemFactory
         ("Кольчуга", 6),
         ("Латные доспехи", 10),
         ("Магический плащ", 8)
+    ];
+
+    private static readonly (string Name, double Damage, double Accuracy)[] Crossbows =
+    [
+        ("Лёгкий арбалет", 7, 0.8),
+        ("Тяжёлый арбалет", 14, 0.55),
+        ("Арбалет-разведчик", 10, 0.7)
     ];
     
     public static IBaseItem CreateRandomItem()
